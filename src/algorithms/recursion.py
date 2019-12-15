@@ -22,3 +22,15 @@ def fibonacci(n):
         return 1
     else:
         return fibonacci(n - 2) + fibonacci(n - 1)
+
+
+def sum_list(arr):
+    """Calculates sum of elements in a list.
+
+    :param arr: list of elements
+    :return: sum of the elements
+    """
+    if len(arr) == 0:
+        return 0
+    else:
+        return arr[0] + sum_list(arr[1:])

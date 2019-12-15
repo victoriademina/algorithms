@@ -26,3 +26,16 @@ def test_recursive_sum(n, expected):
 )
 def test_fibonacci(n, expected):
     assert algorithms.recursion.fibonacci(n) == expected
+
+
+@pytest.mark.parametrize(
+    'arr,expected',
+    [
+        ([1, 2, 3], 6),
+        ([1], 1),
+        ([-10, 10], 0),
+        ([], 0),
+    ]
+)
+def test_sum_list(arr, expected):
+    assert algorithms.recursion.sum_list(arr) == expected
