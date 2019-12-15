@@ -22,3 +22,15 @@ def find_max(arr):
         if x > result:
             result = x
     return result
+
+
+def sum_list(arr):
+    """Return sum of all elements in the given list.
+
+    :param arr: list to sum elements
+    :return: sum of the elements in list arr
+    """
+    result = 0
+    for x in arr:
+        result = result + x
+    return result

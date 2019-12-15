@@ -26,3 +26,16 @@ def test_find_min(arr, expected):
 )
 def test_find_max(arr, expected):
     assert algorithms.search.find_max(arr) == expected
+
+
+@pytest.mark.parametrize(
+    'arr,expected',
+    [
+        ([1, 2, 3], 6),
+        ([1], 1),
+        ([-10, 10], 0),
+        ([], 0),
+    ]
+)
+def test_sum_list(arr, expected):
+    assert algorithms.search.sum_list(arr) == expected
