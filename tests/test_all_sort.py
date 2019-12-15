@@ -37,3 +37,15 @@ def test_selection_sort(arr, expected):
 )
 def test_bubble_sort(arr, expected):
     assert algorithms.all_sort.bubble_sort(arr) == expected
+
+
+@pytest.mark.parametrize(
+    'arr,expected',
+    [
+        ([1, 2, 3], [1, 2, 3]),
+        ([1, 5, 3], [1, 3, 5]),
+        ([10, -10], [-10, 10]),
+    ]
+)
+def test_merge_sort(arr, expected):
+    assert algorithms.all_sort.merge_sort(arr) == expected

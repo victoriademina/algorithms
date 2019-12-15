@@ -49,7 +49,41 @@ def bubble_sort(arr):
     """
     n = len(arr)
     for i in range(n):
-        for j in range(0, n - i - 1):
+        for j in range(n - i - 1):
             if arr[j] > arr[j + 1]:
                 arr[j], arr[j + 1] = arr[j + 1], arr[j]
     return arr
+
+
+def merge_sort(arr):
+    """Sorts list using the Merge Sort algorithm
+
+    :param arr: list which elements should be sorted
+    :return: sorted list
+    """
+    if len(arr) > 1:
+        mid = len(arr) // 2
+        left = merge_sort(arr[:mid])
+        right = merge_sort(arr[mid:])
+        return __merge_arr(left, right)
+    return arr
+
+
+def __merge_arr(left, right):
+    new_arr = []
+    i = j = 0
+    while i < len(left) and j < len(right):
+        if left[i] < right[j]:
+            new_arr.append(left[i])
+            i = i + 1
+        else:
+            new_arr.append(right[j])
+            j = j + 1
+    while i < len(left):
+        new_arr.append(left[i])
+        i = i + 1
+
+    while j < len(right):
+        new_arr.append(right[j])
+        j = j + 1
+    return new_arr
