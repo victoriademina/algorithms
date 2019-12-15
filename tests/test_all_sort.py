@@ -1,3 +1,4 @@
+import algorithms
 import pytest
 
 
@@ -11,4 +12,4 @@ import pytest
     ]
 )
 def test_quick_sort(l, expected):
-    assert algorithms.quick_sort(l) == expected
+    assert algorithms.all_sort.quick_sort(l) == expected
