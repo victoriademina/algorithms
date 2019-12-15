@@ -34,3 +34,24 @@ def sum_list(arr):
     for x in arr:
         result = result + x
     return result
+
+
+def binary_search(arr, x):
+    """Find position of an element with the given value in the given sorted list.
+
+    :param arr: sorted list, where lookup should be performed
+    :param x: value to search for
+    :return: position of an element in arr which has value x
+    """
+
+    low = 0
+    high = len(arr) - 1
+    while low <= high:
+        mid = (low + high) // 2
+        if x == arr[mid]:
+            return mid
+        elif x > arr[mid]:
+            low = mid + 1
+        elif x < arr[mid]:
+            high = mid - 1
+    return None

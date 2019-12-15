@@ -39,3 +39,16 @@ def test_find_max(arr, expected):
 )
 def test_sum_list(arr, expected):
     assert algorithms.search.sum_list(arr) == expected
+
+
+@pytest.mark.parametrize(
+    'arr,x,expected',
+    [
+        ([1, 2, 3, 4, 5], 2, 1),
+        ([1, 2, 3], 1, 0),
+        ([1], 1, 0),
+        ([1, 2, 3], 3, 2),
+    ]
+)
+def test_binary_search(arr, x, expected):
+    assert algorithms.search.binary_search(arr, x) == expected
