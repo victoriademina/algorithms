@@ -39,3 +39,17 @@ def selection_sort(arr):
         smallest = __find_smallest(arr)
         new_arr.append(arr.pop(smallest))
     return new_arr
+
+
+def bubble_sort(arr):
+    """Sorts list using the Bubble Sort algorithm.
+
+    :param arr: list which elements should be sorted
+    :return: sorted list
+    """
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n - i - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+    return arr
