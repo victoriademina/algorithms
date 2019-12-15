@@ -9,3 +9,16 @@ def find_min(arr):
         if x < result:
             result = x
     return result
+
+
+def find_max(arr):
+    """Find value of the maximum element in the given list.
+
+    :param arr: list, on which search will be performed
+    :return: value of the maximum element in arr
+    """
+    result = arr[0]
+    for x in arr:
+        if x > result:
+            result = x
+    return result
