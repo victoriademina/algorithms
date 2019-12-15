@@ -52,3 +52,16 @@ def test_sum_list(arr, expected):
 )
 def test_binary_search(arr, x, expected):
     assert algorithms.search.binary_search(arr, x) == expected
+
+
+@pytest.mark.parametrize(
+    'arr,expected',
+    [
+        ([1, 2, 3], 6),
+        ([1], 1),
+        ([-10, 10], -100),
+        ([], 1),
+    ]
+)
+def test_multiplication(arr, expected):
+    assert algorithms.search.multiplication(arr) == expected

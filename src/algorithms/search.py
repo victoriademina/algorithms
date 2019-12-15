@@ -55,3 +55,15 @@ def binary_search(arr, x):
         elif x < arr[mid]:
             high = mid - 1
     return None
+
+
+def multiplication(arr):
+    """Return result of multiplication of all elements in the given list.
+
+    :param arr: list to multiply elements
+    :return: multiplication of the elements in list arr
+    """
+    result = 1
+    for x in arr:
+        result = result * x
+    return result
