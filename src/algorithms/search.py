@@ -92,3 +92,27 @@ def bfs(graph, source, destination):
                 search_queue.append(neighbour)
                 visited.append(neighbour)
     return False
+
+
+def dfs(graph, source, destination):
+    """Finds if the destination is reachable from the source in the graph.
+
+    :param graph: dictionary that represents a graph
+    :param source: starting vertex in the graph
+    :param destination: ending vertex in the graph
+    :return: True if there is a path from the source to the destination in the graph
+    """
+
+    return __dfs(graph, source, destination, [])
+
+
+def __dfs(graph, current, destination, visited):
+    visited.append(current)
+    if current == destination:
+        return True
+    for neighbour in graph.get(current, []):
+        if neighbour not in visited:
+            result = __dfs(graph, neighbour, destination, visited)
+            if result:
+                return True
+    return False
