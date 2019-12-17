@@ -1,3 +1,6 @@
+import collections
+
+
 def find_min(arr):
     """Find value of the minimum element in the given list.
 
@@ -67,3 +70,25 @@ def multiplication(arr):
     for x in arr:
         result = result * x
     return result
+
+
+def bfs(graph, source, destination):
+    """Finds if the destination is reachable from the source in the graph.
+
+    :param graph: dictionary that represents a graph
+    :param source: starting vertex in the graph
+    :param destination: ending vertex in the graph
+    :return: True if there is a path from the source to the destination in the graph
+    """
+    search_queue = collections.deque()
+    search_queue.append(source)
+    visited = []
+    while len(search_queue) > 0:
+        current = search_queue.popleft()
+        if current == destination:
+            return True
+        for neighbour in graph.get(current, []):
+            if neighbour not in visited:
+                search_queue.append(neighbour)
+                visited.append(neighbour)
+    return False

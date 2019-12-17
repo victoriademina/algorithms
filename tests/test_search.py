@@ -65,3 +65,29 @@ def test_binary_search(arr, x, expected):
 )
 def test_multiplication(arr, expected):
     assert algorithms.search.multiplication(arr) == expected
+
+
+@pytest.mark.parametrize(
+    'graph,source,destination,expected',
+    [
+        ({
+             1: [2, 3],
+             3: [4],
+         }, 1, 4, True),
+        ({
+             1: [2, 3],
+             2: [4],
+         }, 3, 1, False),
+        ({
+             1: [2, 3],
+             3: [4],
+         }, 1, 1, True),
+        ({
+             1: [2, 3],
+             3: [4],
+             2: [1],
+         }, 1, 4, True),
+    ]
+)
+def test_bfs(graph, source, destination, expected):
+    assert algorithms.search.bfs(graph, source, destination) == expected
